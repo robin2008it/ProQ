@@ -3,10 +3,11 @@
 
 //Import React and Hook we needed
 import React, { useState } from 'react';
-import DeviceInfo from 'react-native-device-info';
+//import DeviceInfo from 'react-native-device-info';
 import uuid from 'react-native-uuid';
 import axios from 'axios';
 import QRCode from 'react-native-qrcode-svg';
+import { getUniqueId, getManufacturer } from 'react-native-device-info';
 
 //Import all required component
 import {
@@ -49,8 +50,8 @@ const RegisterScreen = props => {
     // }
     //Show Loader
     setLoading(true);
-    //var id = DeviceInfo.getUniqueID();
-    var id = uuid.v1();
+    var id = getUniqueId();
+    //var id = uuid.v1();
     console.log("id is===>"+id)
     var dataToSend = {
       "id": id,
